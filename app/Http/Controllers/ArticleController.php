@@ -41,7 +41,21 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        /**
+         * Check request type
+         * if PUT -> check if article with id exists, if not create one
+         */
+        $article = $request->isMethod('put') ? Article::findOrFail($request->article_id) : new Article;
+
+        // Get all necessary information for saving a new article
+        $article->id = $request->input('article_id');
+        $article->title = $request->input('title');
+        $article->body = $request->input('body');
+
+        // Save the new article as a resource
+        if($article->save()) {
+            return new aResource($article);
+        }
     }
 
     /**
@@ -90,6 +104,12 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // Get an article to delete
+        $article = Article::findOrFail($id);
+
+        // Delete the specified article
+        if($article->delete()) {
+            return new aResource($article);
+        }
     }
 }
