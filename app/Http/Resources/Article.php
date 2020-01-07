@@ -14,6 +14,13 @@ class Article extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        // return parent::toArray($request);
+
+        // Get rid of 'created at' and 'updated at' keys from the data
+        return [
+            'id' => $this->id,
+            'title' => $this->title,
+            'body' => $this->body
+        ];
     }
 }
