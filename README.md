@@ -1,5 +1,5 @@
 ## CRUD Maqalat
-Maqalat is a completely functional CRUD API the features can be tested. Setting it up will create 30 Fake Articles with an `id`, `title` and `body` along with an `author_url` currently set to *[https://imtiazraqib.com](https://imtiazraqib.com)*
+Maqalat is a completely functional CRUD API whose features can be tested. Setting it up will create 30 Fake Articles with an `id`, `title` and `body` along with an `author_url` currently set to *[https://imtiazraqib.com](https://imtiazraqib.com)*
 
 #### Setup Maqalat for testing
 1. Download [XAMPP](https://www.apachefriends.org/index.html) and [Composer](https://getcomposer.org/)
