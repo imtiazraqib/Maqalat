@@ -1,3 +1,41 @@
+## CRUD Maqalat
+Maqalat is a completely functional CRUD API the features can be tested. Setting it up will create 30 Fake Articles with an `id`, `title` and `body` along with an `author_url` currently set to *[https://imtiazraqib.com](https://imtiazraqib.com)*
+
+#### Setup Maqalat for testing
+1. Download [XAMPP](https://www.apachefriends.org/index.html) and [Composer](https://getcomposer.org/)
+2. Clone the repository
+3. Open XAMPP Control Center and start the Apache Server
+4. Fire up a browser and type in `http://maqalat.test` and it is working if you see the **Laravel** logo
+5. Fire up [Postman](https://www.getpostman.com/downloads/) or your choice of API tester (Although Postman is pretty cool, not sponsored! 😢)
+
+6. Below is the workflow for [Postman](https://www.getpostman.com/downloads/):
+    - **[POST]()**  -> http://maqalat.test/api/article
+        - Add a new Header with **Key** = [Content-Type]() and **Value** = [application/json]()
+        - Body follows a `raw` format as shown below
+        ```json
+            {
+                "title":"Whatever is your new title",
+                "body":"Whatever you wanna keep as the new body"
+            }
+        ```
+    - **[GET]()**   -> http://maqalat.test/api/articles
+    - **[PUT]()**   -> http://maqalat.test/api/article
+        - Add a new Header with **Key** = [Content-Type]() and **Value** = [application/json]()
+        - Body follows a `raw` format as shown below
+        ```json
+            {
+                "article_id": 4,
+                "title":"Whatever is your UPDATED title",
+                "body":"Whatever you wanna keep as the UPDATED body"
+            }
+        ```
+        - The `article_id` is the `id` of the article that you want to update with the following `title` and `body`
+    - **[DEL]()**   -> http://maqalat.test/api/article/{id}
+        - Replace `{id}` with the actual article id you want to delete.
+
+## Inspiration
+The project is setup personally for me to learn Laravel and familiarize myself with the framework. The project would not have been possible without the tutorial from [Traversy Media](https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA) over at YouTube. His video titled, *[Laravel 5.5 API From Scratch Using Resources](https://www.youtube.com/watch?v=4pc6cgisbKE)* is what I used personally to follow along and learn the fundamentals of Laravel.
+
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
