@@ -23,4 +23,16 @@ class Article extends JsonResource
             'body' => $this->body
         ];
     }
+
+    /**
+     * Add aditional information to returned data
+     * 
+     * @param \Illuminate\Http\Request  $request
+     * @return array
+     */
+    public function with($request) {
+        return [
+            'author_url' => url('https://imtiazraqib.com')
+        ];
+    }
 }
