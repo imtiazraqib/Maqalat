@@ -12,6 +12,7 @@ Maqalat is a completely functional API with CRUD functionality whose features ca
     - If you get an error about an encryption key, run `php artisan key:generate`
 3. Open XAMPP Control Center and start the Apache Server
 4. Open the repository folder using VS Code or your preferred code editor and navigate to `.env` file
+    - The `.env` will not exist, so create a new file and use the `.env.example` template to fill it up and follow along
     - Under `DB_CONNECTION=mysql` make sure the following are as below:
         - `DB_DATABASE=maqalat`
         - `DB_USERNAME=root OR $your username$`
