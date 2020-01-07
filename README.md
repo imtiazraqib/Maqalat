@@ -4,6 +4,12 @@ Maqalat is a completely functional API with CRUD functionality whose features ca
 #### Setup Maqalat for testing
 1. Download [XAMPP](https://www.apachefriends.org/index.html) and [Composer](https://getcomposer.org/)
 2. Clone the repository
+    > Below steps are taken from [Traversy Media's Larticles API](https://github.com/bradtraversy/larticles_api)
+    - Open a terminal within the repository
+    - Install dependencies by `composer install`
+    - Run Migrations by `php artisan migrations`
+    - Import Articles by `php artisan db:seed`
+    - If you get an error about an encryption key, run `php artisan key:generate`
 3. Open XAMPP Control Center and start the Apache Server
 4. Open the repository folder using VS Code or your preferred code editor and navigate to `.env` file
     - Under `DB_CONNECTION=mysql` make sure the following are as below:
