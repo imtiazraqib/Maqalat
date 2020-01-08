@@ -1,27 +1,29 @@
 ## What is Maqalat?
 Maqalat is a completely functional API with CRUD functionality whose features can be tested. Setting it up will create 30 Fake Articles with an `id`, `title` and `body` along with an `author_url` currently set to *[https://imtiazraqib.com](https://imtiazraqib.com)*
 
-#### Setup Maqalat for testing
+#### Setup Maqalat
 1. Download [XAMPP](https://www.apachefriends.org/index.html) and [Composer](https://getcomposer.org/)
 2. Open XAMPP Control Center and start the Apache Server and MySQL server
 3. Clone the repository
-    > Below steps are taken from [Traversy Media's Larticles API](https://github.com/bradtraversy/larticles_api)
-    - Open a terminal within the repository
-    - Install dependencies by `composer install`
-    - Run Migrations by `php artisan migrations`
-    - Import Articles by `php artisan db:seed`
-    - If you get an error about an encryption key, run `php artisan key:generate`
 4. Open the repository folder using VS Code or your preferred code editor and navigate to `.env` file
     - The `.env` will not exist, so create a new file and use the `.env.example` template to fill it up and follow along
     - Under `DB_CONNECTION=mysql` make sure the following are as below:
         - `DB_DATABASE=maqalat`
         - `DB_USERNAME=root OR $your username$`
         - `DB_PASSWORD= $your password$` or leave it empty if you have no password
-        
-5. Fire up a browser and type in `http://maqalat.test` and it is working if you see the **Laravel** logo
-6. Fire up [Postman](https://www.getpostman.com/downloads/) or your choice of API tester (Although Postman is pretty cool, not sponsored! 😢)
+     <br>
+     
+5.   > The steps provided below are taken from [Traversy Media's Larticles API](https://github.com/bradtraversy/larticles_api)
+        > * Open a terminal within the repository
+        > * Install dependencies by `composer install`
+        > * Generate an encryption key, run `php artisan key:generate`
+        > * Run Migrations by `php artisan migrations`
+        > * Import Articles by `php artisan db:seed`        
+6. Fire up a browser and type in `http://maqalat.test` and it is working if you see the **Laravel** logo
+    - Check if the database is populated by the seeded articles by going to `http://maqalat/api/articles`
+7. Fire up [Postman](https://www.getpostman.com/downloads/) or your choice of API tester (Although Postman is pretty cool, not sponsored! 😢)
 
-7. Below is the workflow for [Postman](https://www.getpostman.com/downloads/):
+8. Below is the workflow for [Postman](https://www.getpostman.com/downloads/):
     - **[POST]()**  -> http://maqalat.test/api/article
         - Add a new Header with **Key** = [Content-Type]() and **Value** = [application/json]()
         - Body follows a `raw` format as shown below
