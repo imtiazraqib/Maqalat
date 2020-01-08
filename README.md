@@ -11,19 +11,32 @@ Maqalat is a completely functional API with CRUD functionality whose features ca
         - `DB_DATABASE=maqalat`
         - `DB_USERNAME=root OR $your username$`
         - `DB_PASSWORD= $your password$` or leave it empty if you have no password
-     <br>
-     
-5.   > The steps provided below are taken from [Traversy Media's Larticles API](https://github.com/bradtraversy/larticles_api)
+5. To route Laravel homepage to `maqalat.test`, follow the steps below:
+    * go to `../xampp/apache/conf/extra` and open `httpd-vhosts.conf` with an editor
+    * Input this at the bottom of the `httpd-vhosts.conf` file:
+    ``` html
+    <VirtualHost *:80>
+        DocumentRoot "C:/xampp/htdocs/maqalat/public"
+        ServerName maqalat.test
+    </VirtualHost>
+    ```
+    * Open Notepad or the equivalent in your OS as **administrator**
+    * Open a file similar to this syntax that can be found in **Windows** - `C:\Windows\System32\drivers\etc`
+    * Make sure **All Files** option is selected and open the `hosts` file
+    * Add this at the bottom of the comments - *[127.0.0.1 maqalat.test]()*
+    <br>
+    
+6.   > The steps provided below are taken from [Traversy Media's Larticles API](https://github.com/bradtraversy/larticles_api)
         > * Open a terminal within the repository
         > * Install dependencies by `composer install`
         > * Generate an encryption key, run `php artisan key:generate`
         > * Run Migrations by `php artisan migrations`
         > * Import Articles by `php artisan db:seed`        
-6. Fire up a browser and type in `http://maqalat.test` and it is working if you see the **Laravel** logo
+7. Fire up a browser and type in `http://maqalat.test` and it is working if you see the **Laravel** logo
     - Check if the database is populated by the seeded articles by going to `http://maqalat/api/articles`
-7. Fire up [Postman](https://www.getpostman.com/downloads/) or your choice of API tester (Although Postman is pretty cool, not sponsored! 😢)
+8. Fire up [Postman](https://www.getpostman.com/downloads/) or your choice of API tester (Although Postman is pretty cool, not sponsored! 😢)
 
-8. Below is the workflow for [Postman](https://www.getpostman.com/downloads/):
+9. Below is the workflow for [Postman](https://www.getpostman.com/downloads/):
     - **[POST]()**  -> http://maqalat.test/api/article
         - Add a new Header with **Key** = [Content-Type]() and **Value** = [application/json]()
         - Body follows a `raw` format as shown below
